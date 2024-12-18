@@ -48,15 +48,15 @@ repo_url = "https://github.com/alberanalafean22/convnextkeras"   #https://github
 model_name = "convnextaugmentasiepochs50.keras"
 
 # Fungsi load model
-def load_model(repo_url, model_name):
+def load_modelll(repo_url, model_name):
     repo = git.Repo.clone_from(repo_url, "temp_repo")
     subprocess.run(["git", "lfs", "install"], cwd="temp_repo")
     subprocess.run(["git", "lfs", "pull"], cwd="temp_repo")
     return "temp_repo/" + model_name
 
 # Load model
-modelpt = load_model(repo_url, model_name)
-model = tf.keras.models.load_model(modelpt)
+modelpt = load_modelll(repo_url, model_name)
+model = load_model(modelpt)
 
 # Kelas untuk klasifikasi
 class_indices = {
