@@ -55,7 +55,7 @@ def load_model(repo_url, model_name):
     return "temp_repo/" + model_name
 
 # Load model
-model = tf.keras.models.load_model(repo_url, model_name)
+model = load_model(repo_url, model_name)
 
 # Kelas untuk klasifikasi
 class_indices = {
