@@ -1,1 +1,3 @@
-git
+streamlit
+gitpython
+git-lfs
