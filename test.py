@@ -42,7 +42,7 @@ add_custom_header()
 
 
 # Repository GitHub
-repo_url = "https://github.com/alberanalafean22/convnextkeras"
+repo_url = "https://github.com/alberanalafean22/convnextkeras"   #https://github.com/alberanalafean22/convnextkeras/blob/main/convnextaugmentasiepochs50.keras
 
 # Nama model
 model_name = "convnextaugmentasiepochs50.keras"
