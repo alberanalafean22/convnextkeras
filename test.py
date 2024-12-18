@@ -5,10 +5,10 @@ import streamlit as st
 import git
 
 # Repository GitHub
-repo_url = "(link unavailable)"
+repo_url = "https://github.com/alberanalafean22/convnextkeras"
 
 # Nama model
-model_name = "model.h5"
+model_name = "convnextaugmentasiepochs50.keras"
 
 # Fungsi load model
 def load_model(repo_url, model_name):
