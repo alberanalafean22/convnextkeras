@@ -2,3 +2,7 @@ tensorflow
 streamlit
 gitpython
 git-lfs
+librosa
+tensorflow
+pydub
+matplotlib
