@@ -1,6 +1,7 @@
 tensorflow
 streamlit
 gitpython
+git
 git-lfs
 librosa
 tensorflow
