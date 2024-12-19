@@ -15,6 +15,8 @@ import json
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from tensorflow.keras.utils import get_file
+import os
+import shutil
 
 def add_custom_header():
     html_code = """
@@ -41,22 +43,45 @@ def add_custom_header():
 add_custom_header()
 
 
-# Repository GitHub
-repo_url = "https://github.com/alberanalafean22/convnextkeras.git"   #https://github.com/alberanalafean22/convnextkeras/blob/main/convnextaugmentasiepochs50.keras
 
-# Nama model
+# Repository GitHub
+repo_url = "https://github.com/alberanalafean22/convnextkeras"
 model_name = "convnextaugmentasiepochs50.keras"
 
-# Fungsi load model
 def load_model_from_github(repo_url, model_name):
-    repo = git.Repo.clone_from(repo_url, "temp_repo")
-    subprocess.run(["git", "lfs", "install"], cwd="temp_repo")
-    subprocess.run(["git", "lfs", "pull"], cwd="temp_repo")
-    model_path = "temp_repo/" + model_name
+    repo_path = "temp_repo"
+    
+    # Hapus direktori jika sudah ada
+    if os.path.exists(repo_path):
+        shutil.rmtree(repo_path)
+    
+    repo = git.Repo.clone_from(repo_url, repo_path)
+    subprocess.run(["git", "lfs", "install"], cwd=repo_path)
+    subprocess.run(["git", "lfs", "pull"], cwd=repo_path)
+    model_path = os.path.join(repo_path, model_name)
     return tf.keras.models.load_model(model_path)
 
 # Load model
 model = load_model_from_github(repo_url, model_name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Kelas untuk klasifikasi
